@@ -1,0 +1,12 @@
+div(class="form-group")
+	label(for="user") User
+	input(type="text", value="", placeholder="user", ng-model="user.name", id="user", class="form-control input-medium")
+div(class="form-group") 
+	label(for="password") Password
+	input(type="text", value="", placeholder="password", ng-model="user.password", id="password" class="form-control")
+div(class="form-group")
+	label(for="email") Email
+	input(type="text", value="", placeholder="email", ng-model="user.email", id="email", class="form-control")
+		
+button(ng-click="save(user)", class="btn btn-info") Save
+

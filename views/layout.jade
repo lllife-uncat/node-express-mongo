@@ -1,0 +1,34 @@
+doctype 5
+html
+	head
+		title= title
+		link(rel='stylesheet', href='/stylesheets/style.css')
+		link(rel='stylesheet', href='/bootstrap/css/bootstrap.css')
+		link(rel="stylesheet", href="/font-awesome/css/font-awesome.css")
+		script(src='/jquery/jquery.js')
+		script(src='/bootstrap/js/bootstrap.js')
+		script(src='/angular/angular.js')
+		script(src="/angular/angular-route.js")
+		script(src="/javascripts/client.js")
+
+	body(ng-app="HelloApp")
+		div(class="navbar navbar-inverse navbar-fixed-top", role="navigatioin", ng-controller="RouteController")
+			div(class="navbar-header")
+				button(class="navbar-toggle", data-toggle="collapse", data-target=".navbar-collapse")
+					span(class="sr-only") Toggle navigation
+					span(class="icon-bar")
+					span(class="icon-bar")
+					span(class="icon-bar")
+				a(class="navbar-brand", href="#") 
+					span(class="fa fa-twitter")  Hello Express
+			div(class="navbar-collapse collapse")
+				ul(class="nav navbar-nav")
+					li(ng-class="{ active: isActive('/')}")
+						a(href="#/", class="fa fa-home")  Home
+					li(ng-class="{ active: isActive('/about')}")
+						a(href="#/about", class="fa fa-circle-o")  About
+					li(ng-class="{ active: isActive('/contact')}")
+						a(href="#/contact", class="fa fa-user")  Contact
+		div(style="padding:10px;", ng-controller="HelloController")
+			//block content
+			div(ng-view)
